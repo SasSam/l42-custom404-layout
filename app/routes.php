@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('404', array('as' => '404', 'uses' => 'ErrorController@missing'));
+
+Route::get('/test', array('as' => 'test', 'uses' => 'HomeController@test'));
+
+Route::get('/', array('as' => 'home', 'uses' => 'HomeController@index'));
